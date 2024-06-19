@@ -86,17 +86,18 @@ class _PadState extends State<Pad> {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
-        playSound();
-      },
-      style: ButtonStyle(
-        backgroundColor: WidgetStatePropertyAll<Color>(color),
-        fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-        shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
+    return Expanded(
+      child: TextButton(
+        onPressed: () {
+          playSound();
+        },
+        style: ButtonStyle(
+          backgroundColor: WidgetStatePropertyAll<Color>(color),
+          shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
+      
+        ),
+        child: const Text(""),
       ),
-      child: const Text(""),
     );
   }
 }
