@@ -24,96 +24,19 @@ class _XylophoneAppState extends State<XylophoneApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextButton(
-                  onPressed: () {
-                    playSound(1);
-                  },
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
-                ),
-                child: const Text(""),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(2);
-                },
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.orange),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
-                ),
-                child: const Text(""),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(3);
-                },
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.yellow),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
-                ),
-                child: const Text(""),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(4);
-                },
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.green),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
-                ),
-                child: const Text(""),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(5);
-                },
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.teal),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
-                ),
-                child: const Text(""),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(6);
-                },
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.blue),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
-                ),
-                child: const Text(""),
-              ),
-              TextButton(
-                onPressed: () {
-                  playSound(7);
-                },
-                style: ButtonStyle(
-                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.purple),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
-                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
-
-                ),
-                child: const Text(""),
-              ),
+              Pad(number: 1, color: Colors.red),
+              Pad(number: 2, color: Colors.orange),
+              Pad(number: 3, color: Colors.yellow),
+              Pad(number: 4, color: Colors.green),
+              Pad(number: 5, color: Colors.teal),
+              Pad(number: 6, color: Colors.blue),
+              Pad(number: 7, color: Colors.purple),
             ],
           ),
         ),
@@ -122,4 +45,59 @@ class _XylophoneAppState extends State<XylophoneApp> {
   }
 }
 
+class Pad extends StatefulWidget {
+
+  final int number;
+  final Color color;
+
+  const Pad({
+    super.key,
+    required this.number,
+    required this.color
+  });
+
+
+  @override
+  State<Pad> createState() {
+    return _PadState();
+  }
+}
+
+class _PadState extends State<Pad> {
+
+  late final int number;
+  late final Color color;
+
+  _PadState();
+
+  @override
+  void initState(){
+    super.initState();
+    number = widget.number;
+    color = widget.color;
+  }
+
+
+
+  Future<void> playSound() async {
+    final player = AudioPlayer();
+    await player.play(AssetSource("note$number.wav"));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        playSound();
+      },
+      style: ButtonStyle(
+        backgroundColor: WidgetStatePropertyAll<Color>(color),
+        fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+        shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
+
+      ),
+      child: const Text(""),
+    );
+  }
+}
 
