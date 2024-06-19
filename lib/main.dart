@@ -36,7 +36,8 @@ class _XylophoneAppState extends State<XylophoneApp> {
                   },
                 style: ButtonStyle(
                   backgroundColor: const WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
 
                 ),
                 child: const Text(""),
@@ -47,7 +48,8 @@ class _XylophoneAppState extends State<XylophoneApp> {
                 },
                 style: ButtonStyle(
                   backgroundColor: const WidgetStatePropertyAll<Color>(Colors.orange),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
 
                 ),
                 child: const Text(""),
@@ -58,7 +60,8 @@ class _XylophoneAppState extends State<XylophoneApp> {
                 },
                 style: ButtonStyle(
                   backgroundColor: const WidgetStatePropertyAll<Color>(Colors.yellow),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
 
                 ),
                 child: const Text(""),
@@ -69,7 +72,8 @@ class _XylophoneAppState extends State<XylophoneApp> {
                 },
                 style: ButtonStyle(
                   backgroundColor: const WidgetStatePropertyAll<Color>(Colors.green),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
 
                 ),
                 child: const Text(""),
@@ -80,7 +84,8 @@ class _XylophoneAppState extends State<XylophoneApp> {
                 },
                 style: ButtonStyle(
                   backgroundColor: const WidgetStatePropertyAll<Color>(Colors.teal),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
 
                 ),
                 child: const Text(""),
@@ -91,7 +96,8 @@ class _XylophoneAppState extends State<XylophoneApp> {
                 },
                 style: ButtonStyle(
                   backgroundColor: const WidgetStatePropertyAll<Color>(Colors.blue),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
 
                 ),
                 child: const Text(""),
@@ -102,7 +108,8 @@ class _XylophoneAppState extends State<XylophoneApp> {
                 },
                 style: ButtonStyle(
                   backgroundColor: const WidgetStatePropertyAll<Color>(Colors.purple),
-                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(118.0)),
+                  shape: WidgetStatePropertyAll<RoundedRectangleBorder>(RoundedRectangleBorder( borderRadius: BorderRadius.circular(8.0))),
 
                 ),
                 child: const Text(""),
@@ -114,3 +121,5 @@ class _XylophoneAppState extends State<XylophoneApp> {
     );
   }
 }
+
+
