@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 void main(){
   
-  runApp( XylophoneApp() );
+  runApp( const XylophoneApp() );
   
 }
 
@@ -19,6 +17,10 @@ class XylophoneApp extends StatefulWidget {
 class _XylophoneAppState extends State<XylophoneApp> {
 
 
+  Future<void> playSound( int number ) async {
+    final player = AudioPlayer();
+    await player.play(AssetSource("note$number.wav"));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,91 +28,84 @@ class _XylophoneAppState extends State<XylophoneApp> {
       home: Scaffold(
         body: SafeArea(
           child: Column(
-
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               TextButton(
-                  onPressed: () async {
-                    final player = AudioPlayer();
-                    await player.play(AssetSource("note1.wav"));
+                  onPressed: () {
+                    playSound(1);
                   },
-                child: Text(""),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(Size.fromHeight(75.0)),
+                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.red),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
 
                 ),
+                child: const Text(""),
               ),
               TextButton(
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource("note2.wav"));
+                onPressed: () {
+                  playSound(2);
                 },
-                child: Text(""),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(Size.fromHeight(75.0)),
+                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.orange),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
 
                 ),
+                child: const Text(""),
               ),
               TextButton(
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource("note3.wav"));
+                onPressed: () {
+                  playSound(3);
                 },
-                child: Text(""),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(Size.fromHeight(75.0)),
+                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.yellow),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
 
                 ),
+                child: const Text(""),
               ),
               TextButton(
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource("note4.wav"));
+                onPressed: () {
+                  playSound(4);
                 },
-                child: Text(""),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(Size.fromHeight(75.0)),
+                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.green),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
 
                 ),
+                child: const Text(""),
               ),
               TextButton(
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource("note5.wav"));
+                onPressed: () {
+                  playSound(5);
                 },
-                child: Text(""),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(Size.fromHeight(75.0)),
+                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.teal),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
 
                 ),
+                child: const Text(""),
               ),
               TextButton(
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource("note6.wav"));
+                onPressed: () {
+                  playSound(6);
                 },
-                child: Text(""),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(Size.fromHeight(75.0)),
+                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.blue),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
 
                 ),
+                child: const Text(""),
               ),
               TextButton(
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource("note7.wav"));
+                onPressed: () {
+                  playSound(7);
                 },
-                child: Text(""),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
-                  fixedSize: WidgetStateProperty.all<Size>(Size.fromHeight(75.0)),
+                  backgroundColor: const WidgetStatePropertyAll<Color>(Colors.purple),
+                  fixedSize: WidgetStateProperty.all<Size>(const Size.fromHeight(100.0)),
 
                 ),
+                child: const Text(""),
               ),
             ],
           ),
